@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link type="text/css" href="/style.css">
+</head>
+
+<body>
+    <h1>{{toDoListTitle}}</h1>
+    <form action="/add_list" method='post'>
+        <p>
+            <label for="content">할 일 추가:</label>
+            <input type="text" name='content'>
+            <input type="submit" value='추가하기'>
+        </p>
+        <p>
+        <ul>
+            {% for val in toDoLists %}
+            <li>{{val}}</li>
+            {% endfor %}
+        </ul>
+        </p>
+    </form>
+</body>
+
+</html>
