@@ -1,4 +1,6 @@
-const express = require('express'), path = require('path'), nunjucks = require('nunjucks');
+const express = require('express')
+, path = require('path')
+, nunjucks = require('nunjucks');
 const app = express();
 app.set('port', process.env.PORT || 3000);
 
@@ -11,7 +13,7 @@ nunjucks.configure('views', {
   watch: true,
 });
 
-// app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
