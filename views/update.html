@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update page</title>
+    <link type="text/css" rel="stylesheet" href="/style.css">
+</head>
+<body>
+    {% set wordPrevContent = prevContent.substring(0,prevContent.indexOf('_')) %}
+    <h3>{{wordPrevContent}}</h3>
+    <form action="/update_list" method='post'>
+        <input type="text" name="newContent">
+        <input type="hidden" name="prevContent" value=prevContent>
+        <input type="submit" value="수정하기">
+    </form>
+</body>
+</html>

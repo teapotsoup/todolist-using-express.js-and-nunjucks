@@ -1,5 +1,5 @@
 input::-webkit-input-placeholder {
-    color: whitesmoke;
+    color: black;
 }
 body{
     background-color: palevioletred;
@@ -14,4 +14,16 @@ input {
     font-size: 12px;
     text-align: center;
     border: 1px solid whitesmoke;
+}
+
+ul{
+    list-style:none;
+}
+
+.liButton{
+    margin-left: 5px;
+}
+
+.optionForm{
+    display:inline;
 }
