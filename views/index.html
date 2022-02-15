@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
     <h1>{{toDoListTitle}}</h1>
     <form action="/add_list" method='post'>
         <p>
@@ -21,7 +20,7 @@
         <ul>
             {% for val in toDoLists %}
             <li>
-                {% set todoNoId = val.substring(0,val.indexOf('_')) %}
+                {% set todoNoId = val.substring(val.indexOf('_')+1, val.indexOf('.')) %}
                 {{loop.index}}번째 {{todoNoId}}
                 <button type="button" onclick='location.href="/delete_list/{{val}}"'>삭제</button>
                 <a href="/open_update/{{val}}">수정하기</a>
@@ -31,10 +30,6 @@
         </ul>
         </p>
     </form>
-
-
-
-    <script src="app.js"></script>
 </body>
 
 </html>
