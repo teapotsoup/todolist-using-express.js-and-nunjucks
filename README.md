@@ -1,4 +1,3 @@
-# todolist-using-express.js-and-nunjucks
 <h3 align="center">express.js와 nunjuck를 활용한 로컬 파일 입출력 투두리스트 완성</h3>
 <h5 align="center">(파일 자동 정렬을 일정 입력 순으로 개선, 동일 일정 입력시 덮어쓰는 문제 해결)</h5>
 
