@@ -8,28 +8,34 @@
 </head>
 
 <body>
-    <h1>{{toDoListTitle}}</h1>
-    <form action="/add_list" method='post'>
-        <p>
-            {% set contentTitle = '할 일 추가' %}
-            <label for="content">{{contentTitle}}:</label>
-            <input type="text" name='content'>
-            <input type="submit" value='추가하기'>
-        </p>
-        <p>
-        <ul>
-            {% for val in toDoLists %}
-            <li>
-                {% set todoNoId = val.substring(val.indexOf('_')+1, val.indexOf('.')) %}
-                {{loop.index}}번째 {{todoNoId}}
-                <button type="button" onclick='location.href="/delete_list/{{val}}"'>삭제</button>
-                <a href="/open_update/{{val}}">수정하기</a>
-            </li>
-            {% endfor %}
+    <div class="bigcase" >
+        <form class="formcase" action="/add_list" method='post' >
+            <h1>{{toDoListTitle}}</h1>
+            <div>
+                <!-- {% set contentTitle = '할 일 추가' %}
+                <label for="content">{{contentTitle}}:</label> -->
+                <input class="inputtext" type="text" name='content'>
+                <input class="button" type="submit" value='추가하기'>
+            </div>
+            <div>
+                <ul>
+                    {% for val in toDoLists %}
+                    <li>
+                        {% set todoNoId = val.substring(val.indexOf('_')+1, val.indexOf('.')) %}
+                        <span class="circle">
+                            {{loop.index}}
+                        </span>
+                         {{todoNoId}}
+                        <button class="button"  onclick='location.href="/delete_list/{{val}}"'>삭제</button>
+                        <a class="button" href="/open_update/{{val}}">수정</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-        </ul>
-        </p>
     </form>
+    </div>
+    
 </body>
 
 </html>

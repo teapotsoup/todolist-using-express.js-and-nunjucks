@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>update page</title>
     <link type="text/css" rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-    {% set wordPrevContent = prevContent.substring(prevContent.indexOf('_')+1,prevContent.indexOf('.')) %}
-    <h3>{{wordPrevContent}}</h3>
-    <form action="/update_list" method='post'>
-        <input type="text" name="newContent">
-        <input type="hidden" name="prevContent" value="{{prevContent}}">
-        <input type="submit" value="수정하기">
-    </form>
+    <div class="bigcase">
+        <form class="formcase" action="/update_list" method='post'>
+            {% set wordPrevContent = prevContent.substring(prevContent.indexOf('_')+1,prevContent.indexOf('.')) %}
+            <h3>{{wordPrevContent}}</h3>
+            <input class="inputtext" type="text" name="newContent">
+            <input type="hidden" name="prevContent" value="{{prevContent}}">
+            <input class="button" type="submit" value="수정하기">
+        </form>
+    </div>
 </body>
+
 </html>
